@@ -1,30 +1,60 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
-
+import { useState,useEffect } from 'react';
+import Signin from './Components/Signin/Signin';
+import Register from './Components/Register/Register';
+import Profile from './Components/Profile/Profile';
+import Home from './Components/Home/Home';
 function App() {
-  const [name, setName] = useState('Hoang');
-  function onInputChange(event){   
-    setName(event.target.value);
-  }
-  function onButtonSubmit(){
-    // fetch('https://ornate-tartufo-20c28a.netlify.app/api/Users',{
-    //   method:'get',
-    //   headers: {'Content-type':'application/json'},
-    //   body: JSON.stringify({
-    //     name: name
-    //   })
-    // })
-    // console.log(name);
-    fetch('https://ornate-tartufo-20c28a.netlify.app/api/Users')
-        .then(response => response.json())
-        .then(data => setName(data));
+  // function getchecking(){
+  //   fetch('https://userapi20220605151559.azurewebsites.net/user')
+  //   .then(response => response.json())
+  //   .then(data=> setName(data[0].name) )
+  // }
+  // function postchecking(){
+  //   fetch('https://userapi20220605151559.azurewebsites.net/user', {
+  //       method: 'put',
+  //       headers: {'Content-Type': 'application/json'},
+  //       body: JSON.stringify({
+  //         id:16,
+  //         name: "CAUNnguvl",
+  //         email: "Caunnguvl@mail.uc.edu"         
+  //       })
+  //     })
+  //     .then(response=>response.json())
+  //     .then(response => 
+  //       console.log( response)
+  //     )
+  //     .catch(err => console.log(err));
+  // }
+  // const [route,setRoute]=useState('register');
+  // let page;
+  // function onEverythingChange(choice){
+  //   setRoute(choice);
+  // }
+  
+  // if(route==='Signin'){
+  //   page=<Signin onEverythingChange={onEverythingChange}/>;
+  // }else{
+  //   page=<Register onEverythingChange={onEverythingChange}/>;
+
+  // }
+  const [pageRoute,setPageRoute]=useState('Home');
+  function onPageRouteChange(){
+    setPageRoute('Profile');
+    
   }
   return (
     <div className="App">
-      <h1>{name}</h1>
-      <input onChange={(e)=>onInputChange(e)}/>
-      <button onClick={onButtonSubmit}/>
+      {pageRoute==='Home'?
+              <Home onPageRouteChange={onPageRouteChange}/>
+        :
+        <Profile/>
+      }      
+{/* 
+      <Profile/>
+      <Rank/>
+      <Match/>  */}
     </div>
   );
 }

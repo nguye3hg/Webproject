@@ -1,0 +1,281 @@
+#Profile{
+    background-image: url(./groovepaper.jpg);
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+.logoBar{
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    border-bottom: 5px solid ;
+    border-image: url('./pencil.png') 40 round;
+}
+.profileInfo{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.onlineStreak{
+    width:300px;
+    height: 300px;
+    border: 5px solid #62676a;
+    margin-top: 50px;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px #62676a;
+    animation: floating 3s ease-in-out infinite
+
+}
+.rankBoard{
+    width:300px;
+    height: 300px;
+    border: 5px solid #62676a;
+    margin:20px ;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px #62676a;
+    animation: floating 3s ease-in-out infinite
+
+}
+.winRate{
+    width:300px;
+    height: 300px;
+    border: 5px solid #62676a ;
+    margin-top: 50px;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px #62676a;
+    animation: floating 3s ease-in-out infinite
+
+}
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+.playerCardWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top:10vh;
+}
+.profilePic{
+    width:75px;
+    height: 75px;
+    border: 5px solid #62676a  ;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profilePic img{
+    transform: scale(0.3);
+}
+.playerCard{
+    width:300px;
+    height: 75px;
+    border:5px solid #62676a;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.playerCard h3{
+    margin: 3px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.findMatch{
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    align-items: flex-end;
+}
+.findMatch button{
+    width: 120px;
+    height:60px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px #62676a;
+    margin-bottom: -15vh;
+}
+.symbolWrapper1,.symbolWrapper2,.symbolWrapper3{
+    display: flex;
+    justify-content: center;
+}
+.symbol1{
+    width: 150px;
+    height: 150px;
+    border: 5px solid #62676a;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.symbol1 img{
+    transform: scale(0.13);
+}
+.symbol2{
+    width: 150px;
+    height: 150px;
+    border: 5px solid #62676a;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.symbol2 img{
+    transform: scale(0.15);
+}
+.symbol3{
+    width: 150px;
+    height: 150px;
+    border: 5px solid #62676a;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.symbol3 img{
+    transform: scale(0.1);
+}
+.symbol1:hover{
+    animation: rotating 2s ease-in-out forwards;
+}
+.symbol2:hover{
+    animation: rotating 2s ease-in-out forwards;
+}
+.symbol3:hover{
+    animation: rotating 2s ease-in-out forwards;
+}
+#closingX{
+    visibility: hidden;
+    position: absolute;
+    
+}
+@keyframes expand {
+    from{
+        margin-top: 50px;
+        width:300px;
+        height: 300px;
+        border-radius: 5%;
+    }
+    to{
+        border-radius: 0%;
+        margin-top:0px;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@keyframes goneout {
+    from{
+        display: block;
+        visibility:visible;
+        opacity: 1;
+       
+    }to{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        
+    }
+}
+@keyframes collapse {
+    from{
+        border-radius: 0%;
+        margin-top:0px;
+        width: 100vw;
+        height: 100vh;
+        
+    }
+    to{
+        margin-top: 50px;
+        width:300px;
+        height: 300px;
+        border-radius: 5%;
+    }
+}
+@keyframes gonein {
+    from{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        
+    }to{
+        display: block;
+        visibility:visible;
+        opacity: 1;
+        
+    }
+}
+@keyframes slideOut {
+    0%{
+        margin-top: 50px;
+        visibility: visible;
+        opacity: 1;
+    }
+    50%{
+        margin-top: 200px;
+        visibility: visible;
+        opacity: 1;
+    }
+    100%{
+        margin-top: -100vh;
+        visibility: hidden;
+        opacity: 0;
+        
+    }
+}
+.square{
+    width:20px;
+    height: 20px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+.Match{
+    display: flex;
+    flex-wrap: wrap;
+    animation: gonein 10s ease-in-out forwards;
+    width:600px;
+    height: 600px;
+    overflow: hidden;
+}
+.MatchContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+}
+#oponent .profilePic{
+    margin-left: 20px;
+}
+#oponent, #allies{
+    margin-top: -10vh;
+    position: absolute;
+}
+#oponent{
+    margin-left: 70vw;
+    animation: gonein 10s ease-in-out forwards;
+}
+#allies{
+    margin-right: 70vw;
+    animation: gonein 10s ease-in-out forwards;
+}
+@keyframes rotating{
+    from{
+        transform: rotateZ(0deg);
+
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}

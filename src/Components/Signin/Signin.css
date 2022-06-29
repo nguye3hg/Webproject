@@ -1,0 +1,56 @@
+.SigninPart{
+    background-color: transparent;
+    position: absolute;
+    margin-top: -700px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+.SigninForm{
+    width:400px;
+    background-image:url('./pencil.png') ;
+    height: 500px;
+    border: 3px solid transparent;
+    border-image:url("./pencil.png") 10 round ;
+    background-size: 400px 500px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SigninForm h1{
+    margin-left: 30px;
+    margin-bottom: 70px;
+    color: white;
+}
+.SigninForm input{
+    border-image: url("pencil.png") 10 round;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.Option{
+    display: flex;
+}
+.Option h3{
+    margin: 5px;
+}
+.Option button{
+    margin-right: 5px;
+    height: 50px;
+    width: 70px;
+    border-radius: 5%;
+}
+ button:hover{
+    box-shadow: 20px black;
+    transform: scale(1.1);
+}
+.quit{
+    position: absolute;
+    margin-top: -395px;
+    margin-right:  -345px;
+    cursor: pointer;
+}

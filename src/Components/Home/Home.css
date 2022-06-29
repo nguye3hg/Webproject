@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+*{
+    scroll-behavior: smooth;
+    font-family: 'Cabin Sketch', cursive;  
+}
+.body{
+    background-image: url(groovepaper.jpg);
+    overflow-x: hidden;
+
+}
+.wrapper{
+   
+    width:100%;
+    margin:0 auto;
+}
+
+.profilecard{
+    width:150px;
+    height: 200px;
+    background-image: url(./Profile_Img.jpg);
+    background-repeat: no-repeat;
+    background-size: 170px 220px;
+    border: 3px solid ;
+    border-image: url(pencil.png) 20 round;
+    color: black;
+    padding:10px;  
+    filter: grayscale(100%);
+     transition: background-size 4s;
+    
+}
+.profilecard:hover{
+    transform-origin: top right;
+    filter: grayscale(0%);
+    background-size: 330px 350px;
+}
+.profilecard .basicinfo{
+    margin-top: 50px;
+    
+}
+.textcard{
+    font-size: 15px;
+
+}
+.profilecard h3{
+    opacity:0;
+    transition:  3s;
+}
+.profilecard h4{
+    opacity:0;
+    transition:  3s;
+}
+.profilecard .textcard{
+    opacity:0;
+    transition:   3s ;
+
+}
+
+.profilecard:hover>h3{
+    opacity:1;
+
+}
+.profilecard:hover>h4{
+    opacity:1;
+
+}
+.profilecard:hover>.textcard{
+    opacity:1;
+
+}
+.Navigation{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.Navigation ul{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    list-style-type: none;
+}
+.Navigation ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+header{
+    color: black;
+    font-size: 10px;
+}
+.breakline{
+    width:100px;
+    height:3px;
+    background-color: black;
+}
+.Navigation ul li:hover{
+   border: 3px solid;
+   border-image: url(pencil.png) 20 round;
+}
+.Transition{
+    height: 4px;
+    width:300px;
+    background-image: url(pencil.png) ;
+    background-repeat: round;
+
+}
+.Transitioncontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin:30px
+}
+
+.animation-frame1 img{
+    transform: scale(0.7);
+    
+}
+.animation-frame1 .pencil{
+    transform: scale(0.1);
+    animation: fadeoutpencil 15s infinite;
+    animation-delay: 1s;
+    position: absolute;
+}
+.upper-content{
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.animation-frame1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 0px;
+    
+   
+}
+.animation-frame1 .table{
+    animation: fadeout 15s infinite ;
+    animation-delay: 0s;
+    position: absolute;
+}
+.animation-frame2{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+.animation-frame2 img{
+    position: absolute;
+    
+}
+.rock{
+    margin-top: 300px;
+    margin-left: 100px;
+    
+    animation: fadeout1 15s infinite ;
+    animation-delay: 2.5s;
+}
+ .paper{
+    margin-top: 400px;
+    margin-left: 200px;
+    
+    animation: fadeout2 15s infinite ;
+    animation-delay:3s;
+}
+
+.scissor{
+    margin-top: 500px;
+    margin-left: 0px;
+    
+    animation: fadeout3 15s infinite ;
+    animation-delay: 3.5s;
+}
+@keyframes fadeout1 {
+    0%{
+        margin-top: 300px;
+        margin-left: 100px;
+        opacity: 0;
+    }
+    20%{
+        margin-top: 100px;
+        margin-left: -300px;
+        opacity: 1;
+    }
+    40%{
+        margin-top: -100px;
+        margin-left: -600px;
+        opacity: 0;
+    }
+    60%{
+        margin-top: 300px;
+        margin-left: 100px;
+        opacity: 0;
+    }
+    80%{
+        margin-top: 100px;
+        margin-left: -300px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: -100px;
+        margin-left: -600px;
+        opacity: 0;
+    }
+}
+@keyframes fadeout2 {
+    0%{
+        margin-top: 400px;
+        margin-left: 200px;
+        opacity: 0;
+    }
+    20%{
+        margin-top: 200px;
+        margin-left: -200px;
+        opacity: 1;
+    }
+    40%{
+        margin-top: 0px;
+        margin-left: -500px;
+        opacity: 0;
+    }
+    60%{
+        margin-top: 400px;
+        margin-left: 200px;
+        opacity: 0;
+    }
+    80%{
+        margin-top: 200px;
+        margin-left: -200px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: 0px;
+        margin-left: -500px;
+        opacity: 0;
+    }
+}
+@keyframes fadeout3 {
+    0%{
+        margin-top: 500px;
+        margin-left: 0px;
+        opacity: 0;
+    }
+    20%{
+        margin-top: 300px;
+        margin-left: -400px;
+        opacity: 1;
+    }
+    40%{
+        margin-top: 100px;
+        margin-left: -700px;
+        opacity: 0;
+    }
+    60%{
+        margin-top: 500px;
+        margin-left: 0px;
+        opacity: 0;
+    }
+    80%{
+        margin-top: 300px;
+        margin-left: -400px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: 100px;
+        margin-left: -700px;
+        opacity: 0;
+    }
+}
+@keyframes fadeout {
+    0%{
+        margin-top: 200px;
+        margin-left: -200px;
+        opacity: 0;
+    }
+    20%{
+        margin-top: 0px;
+        margin-left: -600px;
+        opacity: 1;
+    }
+    40%{
+        margin-top: -200px;
+        margin-left: -1000px;
+        opacity: 0;
+    }
+    60%{
+        margin-top: 200px;
+        margin-left: -200px;
+        opacity: 0;
+    }
+    80%{
+        margin-top: 0px;
+        margin-left: -600px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: -200px;
+        margin-left: -1000px;
+        opacity: 0;
+    }
+}
+@keyframes fadeoutpencil {
+    0%{
+        margin-top: 200px;
+        margin-left: -300px;
+        opacity: 0;
+    }
+    20%{
+        margin-top: 0px;
+        margin-left: -700px;
+        opacity: 1;
+    }
+    40%{
+        margin-top: -200px;
+        margin-left: -1100px;
+        opacity: 0;
+    }
+    60%{
+        margin-top: 200px;
+        margin-left: -300px;
+        opacity: 0;
+    }
+    80%{
+        margin-top: 0px;
+        margin-left: -700px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: -200px;
+        margin-left: -1100px;
+        opacity: 0;
+    }
+}
+.text-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    width:30vw;
+    padding: 30px;
+    border-right: 3px solid transparent;
+    border-image: url(pencil.png) 20 round;
+}
+.text-intro h1{
+    margin-top: 200px;
+}
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    
+}
+.aboutUs h1{
+    margin-right: 5px;
+}
+.WhyUs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.WhyUs h1{
+    margin-top: -20px;
+}
+.WhyUs h3{
+    font-weight: 100;
+}
+nav{
+    overflow: hidden;
+    height: 50px;
+}
+.text-intro button{
+    background-image: url("./pencil.png") ;
+    background-repeat: round;
+    cursor: pointer;
+}
+.text-intro button:hover{
+    animation: sliding 100s infinite;
+}
+@keyframes sliding {
+    to{
+        background-position: 10vw;
+    }
+}
+.Signinback{
+    height: 100vh;
+    width: 100vw;
+    background-color: grey;
+    opacity: 0.7;
+    position: relative;
+    margin-top: -1124px;
+}
+
