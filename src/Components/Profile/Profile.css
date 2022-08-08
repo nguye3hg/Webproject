@@ -1,5 +1,5 @@
 #Profile{
-    background-image: url(./groovepaper.jpg);
+    background-image: url(../../img/groovepaper.jpg);
     width:100%;
     position: relative;
     overflow: hidden;
@@ -11,7 +11,7 @@
     justify-content: center;
     width: 100vw;
     border-bottom: 5px solid ;
-    border-image: url('./pencil.png') 40 round;
+    border-image: url('../../img/pencil.png') 40 round;
 }
 .profileInfo{
     display: flex;

@@ -1,10 +1,10 @@
 
 import './Profile.css';
 import {useEffect,useState} from 'react';
-import monster from "./monster.jpg";
-import King from "./King.png";
-import pawn from "./pawn.png";
-import Rook from "./Rook.png";
+import monster from "../../img/monster.jpg";
+import King from "../../img/King.png";
+import pawn from "../../img/pawn.png";
+import Rook from "../../img/Rook.png";
 import Rank from '../Rank/Rank';
 function expandOnClick(){
     document.getElementById('rankPage').style.animation='expand 5s ease-in-out forwards';
@@ -42,85 +42,80 @@ for(let i = 0; i < 25; i++) {
 
 let ClickCount=0;
 function CheckingXO(){
-    ClickCount=ClickCount+1;
-    
+    ClickCount=ClickCount+1;    
 }
-function checkWin(e){
+
+function checkWin(e, ClickCount){
     const itemId=e.currentTarget.id;
-         let row=Math.floor(parseInt(e.currentTarget.id)/10);
-         let column=parseInt(e.currentTarget.id)-Math.floor(parseInt(e.currentTarget.id)/10)*10;
-         let countXdia1=0;
-         let countYdia1=0;
-         let countYdia2=0;
-         let countXdia2=0;
-         let countYhor=0;
-         let countXhor=0;
-         let countYver=0;
-         let countXver=0;
-         for(let a=row-4;a<=row+4;a++){
-           let b=column;
-               if(XOList[a][b]===1)
-     
-                   {
-                       countXdia1=countXdia1+1;
-                   }
-               if(XOList[a][b]===2){
-                   countYdia1=countYdia1+2;
-               }
-           b++;
-         }
-         for(let a1=row-4;a1<=row+4;a1++){
-           let b1=column;
-               if(XOList[a1][b1]===1)
-     
-                   {
-                       countXdia2=countXdia2+1;
-                   }
-               if(XOList[a1][b1]===2){
-                   countYdia2=countYdia2+2;
-               }
-           b1--;
-         }
-         for(let a2=row-4;a2<=row+4;a2++){
-           let b2=column;
-               if(XOList[a2][b2]===1)
-     
-                   {
-                       countXhor=countXhor+1;
-                   }
-               if(XOList[a2][b2]===2){
-                   countYhor=countYhor+2;
-               }
-         }
-         for(let a3=column-4;a3<=column+4;a3++){
-           let b3=row;
-               if(XOList[b3][a3]===1)
-     
-                   {
-                       countXver=countXver+1;
-                   }
-               if(XOList[b3][a3]===2){
-                   countYver=countYver+2;
-               }
-           b3++;
-         }
-         if(countXdia1===5 ||
-           
-            
-            countXdia2===5 ||
-            
-            countXhor===5 ||
-           
-            countXver===5){
-               console.log('O Win');
-            }
-          if( countYdia1===10 ||
-           countYdia2===10 ||
-           countYhor===10 ||
-           countYver===10 
-          ){
-               console.log('X Win');
-          }
+    let row=Math.floor(parseInt(e.currentTarget.id)/10);
+    let column=parseInt(e.currentTarget.id)-Math.floor(parseInt(e.currentTarget.id)/10)*10;
+    console.log("row = " + row + " , column = " + column);
+    
+    let N = 5;
+    let numberHorizontal = 1, numberVertical = 1, numberLeftDiagonal = 1, numberRightDiagonal = 1;
+    XOList[row][column] = ClickCount;
+    let currentSelection = XOList[row][column];
+    let isWin = false;
+    // horizontal
+    for(let i = row - 1; i >= 0; i--){
+        if(XOList[i][column] === currentSelection)
+            numberHorizontal += 1;
+        else
+            break;        
+    }
+    for(let i = row + 1; i < 25; i++){
+        if(XOList[i][column] === currentSelection)
+            numberHorizontal += 1;
+        else
+            break;
+    }
+    console.log("horizontal = " + numberHorizontal);
+    // vertical
+    for(let j = row - 1; j >= 0; j--){
+        if(XOList[row][j] === currentSelection)
+            numberVertical += 1;
+        else
+            break;
+    }
+    for(let j = row + 1; j < 25; j++){
+        if(XOList[row][j] === currentSelection)
+            numberVertical += 1;
+        else
+            break;
+    }
+    // left diagonal
+    for(let i = row - 1, j = column - 1; i >= 0 && j >= 0; i-- && j--){
+        if(XOList[i][j] === currentSelection)
+            numberLeftDiagonal += 1;
+        else
+            break;
+    }
+    for(let i = row + 1, j = column + 1; i < 25 && j < 25; i++ && j++){
+        if(XOList[i][j] === currentSelection)
+            numberLeftDiagonal += 1;
+        else
+            break;
+    }
+    // right diagonal
+    for(let i = row - 1, j = column + 1; i >= 0 && j < 25; i-- && j++){
+        if(XOList[i][j] === currentSelection)
+            numberRightDiagonal += 1;
+        else
+            break;
+    }
+    for(let i = row + 1, j = column - 1; i < 25 && j >= 0; i++ && j--){
+        if(XOList[i][j] === currentSelection)
+            numberRightDiagonal += 1;
+        else
+            break;
+    }
+    if(numberHorizontal >= N || numberVertical >= N || numberLeftDiagonal >= N || numberRightDiagonal >= N){
+        isWin = true;
+        if(currentSelection === 1)
+            console.log("X win");
+        else
+            console.log("O win");
+    }
 }
 function playOnClick(e){
     
@@ -135,8 +130,8 @@ function playOnClick(e){
         
     }else{
         ClickCount=ClickCount-1;
-    }
-    checkWin(e);
+    }    
+    checkWin(e, ClickCount % 2 + 1);
 }
  const XOboard=[];
 // function checkWin(e){
@@ -178,7 +173,6 @@ function Profile(){
                     <h1> Online Streak:</h1>
                     <div className="symbolWrapper2">
                         <div className='symbol1'><img src={pawn} alt="pawn"></img></div>
-
                     </div>
                 </div>
                 <div className='rankBoard' id='rankPage' >

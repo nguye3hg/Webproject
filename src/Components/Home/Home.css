@@ -4,7 +4,7 @@
     font-family: 'Cabin Sketch', cursive;  
 }
 .body{
-    background-image: url(groovepaper.jpg);
+    background-image: url(../../img/groovepaper.jpg);
     overflow-x: hidden;
 
 }
@@ -17,11 +17,11 @@
 .profilecard{
     width:150px;
     height: 200px;
-    background-image: url(./Profile_Img.jpg);
+    background-image: url(../../img/Profile_Img.jpg);
     background-repeat: no-repeat;
     background-size: 170px 220px;
     border: 3px solid ;
-    border-image: url(pencil.png) 20 round;
+    border-image: url(../../img/pencil.png) 20 round;
     color: black;
     padding:10px;  
     filter: grayscale(100%);
@@ -94,12 +94,12 @@ header{
 }
 .Navigation ul li:hover{
    border: 3px solid;
-   border-image: url(pencil.png) 20 round;
+   border-image: url(../../img/pencil.png) 20 round;
 }
 .Transition{
     height: 4px;
     width:300px;
-    background-image: url(pencil.png) ;
+    background-image: url(../../img/pencil.png) ;
     background-repeat: round;
 
 }
@@ -345,7 +345,7 @@ header{
     width:30vw;
     padding: 30px;
     border-right: 3px solid transparent;
-    border-image: url(pencil.png) 20 round;
+    border-image: url(../../img/pencil.png) 20 round;
 }
 .text-intro h1{
     margin-top: 200px;
@@ -374,7 +374,7 @@ nav{
     height: 50px;
 }
 .text-intro button{
-    background-image: url("./pencil.png") ;
+    background-image: url("../../img/pencil.png") ;
     background-repeat: round;
     cursor: pointer;
 }

@@ -1,10 +1,10 @@
 import './Home.css';
 import { useState,useEffect } from 'react';
-import rock from "./rock.png";
-import paper from "./paper.png";
-import scissor from "./scissor.png";
-import pencilart from "./pencilart.png";
-import xoimage from "./xoimage.png";
+import rock from "../../img/rock.png";
+import paper from "../../img/paper.png";
+import scissor from "../../img/scissor.png";
+import pencilart from "../../img/pencilart.png";
+import xoimage from "../../img/xoimage.png";
 import Signin from '../Signin/Signin';
 import Register from '../Register/Register';
 
